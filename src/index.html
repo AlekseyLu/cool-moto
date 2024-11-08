@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="./script/app.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body class="min-h-screen font-medium text-lg min-w-96">
+    <div
+      class="relative mx-auto max-w-7xl bg-hero sm:bg-center-top bg-[60%_top] bg-fixed bg-no-repeat"
+    >
+      <header
+        class="relative p-10 flex items-center justify-between text-white bg-black/20"
+      >
+        <button
+          id="burgerBtn"
+          class="group active:scale-110 transition lg:hidden flex flex-col gap-2 items-center md:justify-center justify-self-end p-4 w-16 h-16"
+        >
+          <span class="w-full h-0.5 bg-white group-active:bg-zinc-400 transition"></span>
+          <span class="w-[calc(100%-0.5rem)] h-0.5 bg-white group-active:bg-zinc-400 transition"></span>
+          <span class="w-full h-0.5 bg-white group-active:bg-zinc-400 transition"></span>
+        </button>
+        <img src="#" alt="Logo" class="" />
+
+        <nav class="lg:block hidden md:col-span-2">
+          <ul
+            class="flex gap-5 lg:gap-10 items-center sm:justify-center justify-end"
+          >
+            <li class="group">
+              <a href="#" class="group-hover:text-purple-400 transition"
+                >Home</a
+              >
+            </li>
+            <li class="group">
+              <a href="#" class="group-hover:text-purple-400 transition"
+                >Moto</a
+              >
+            </li>
+            <li class="group">
+              <a href="#" class="group-hover:text-purple-400 transition"
+                >About</a
+              >
+            </li>
+            <li class="group">
+              <a href="#" class="group-hover:text-purple-400 transition">Map</a>
+            </li>
+            <li class="group min-w-36 sm:hidden block">
+              <a
+                href="tel:+79956243602"
+                class="group-hover:text-purple-400 transition"
+                >+7 (999) 999-99-99</a
+              >
+            </li>
+            <li class="group sm:hidden block">
+              <a href="https://t.me/aleksey_lu" target="_blank"
+                ><img
+                  class="group-hover:scale-110 transition-all min-w-14"
+                  width="40px"
+                  src="./images/telegram.png"
+                  alt="Социальная сеть 'Telegram'"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+        <nav id="menu" class="sm:hidden absolute top-0 right-0 left-0 bottom-0 -translate-x-full transition-transform p-10 min-h-screen z-[9999] bg-black"
+        >
+          <ul class="flex flex-col gap-14 items-start justify-center text-4xl">
+            <li class="flex justify-end items-center w-full">
+              <button id="burgerCloseBtn" class="relative w-16 h-16 group">
+                <span class="absolute h-1 w-full bg-white rotate-45 group-active:bg-purple-600 transition"></span>
+                <span class="absolute h-1 w-full bg-white -rotate-45 group-active:bg-purple-600 transition"></span>
+              </button>
+            </li>
+            <li class="group">
+              <a href="#" class="group-active:text-purple-400 transition"
+                >Home</a
+              >
+            </li>
+            <li class="group">
+              <a href="#" class="group-active:text-purple-400 transition"
+                >Moto</a
+              >
+            </li>
+            <li class="group">
+              <a href="#" class="group-active:text-purple-400 transition"
+                >About</a
+              >
+            </li>
+            <li class="group">
+              <a href="#" class="group-active:text-purple-400 transition">Map</a>
+            </li>
+            <li class="group min-w-36">
+              <a
+                href="tel:+79956243602"
+                class="group-active:text-purple-400 transition"
+                >+7 (999) 999-99-99</a
+              >
+            </li>
+            <li class="group">
+              <a href="https://t.me/aleksey_lu" target="_blank"
+                ><img
+                  class="group-active:scale-110 transition-all min-w-14"
+                  width="40px"
+                  src="./images/telegram.png"
+                  alt="Социальная сеть 'Telegram'"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+        <ul
+          class="md:flex min-w-60 items-center flex-nowrap justify-end gap-5 hidden"
+        >
+          <li class="group md:block hidden">
+            <a
+              href="tel:+79956243602"
+              class="group-hover:text-purple-400 transition"
+              >+7 (999) 999-99-99</a
+            >
+          </li>
+          <li class="group">
+            <a href="https://t.me/aleksey_lu" target="_blank"
+              ><img
+                class="group-hover:scale-110 transition-all min-w-14"
+                width="40px"
+                src="./images/telegram.png"
+                alt="Социальная сеть 'Telegram'"
+            /></a>
+          </li>
+        </ul>
+      </header>
+      <main>
+        <div
+          class="grid md:grid-cols-2 py-32 px-10 md:pb-96 text-white bg-black/20"
+        >
+          <h1
+            class="font-extrabold uppercase lg:text-7xl text-5xl md:mb-0 mb-10"
+          >
+            Почувствуй драйв <br />и свободу !
+          </h1>
+          <div class="lg:pl-48 md:pl-10 md:text-left text-center">
+            <h2 class="mb-20 text-xl font-extrabold uppercase text-left">
+              Хочешь испытать себя на прочность? Приходи к нам, мы поможем это
+              сделать!
+            </h2>
+            <button
+              class="mx-auto group relative px-5 py-4 bg-purple-950 md:hover:bg-purple-700 rounded-md text-right w-80 uppercase font-extrabold text-2xl shadow-lg transition-all md:animate-bounce md:hover:animate-none animate-none"
+            >
+              <span
+                class="absolute right-20 -top-4 font-sans italic text-rose-600 text-5xl -rotate-12 sm:group-hover:animate-bounce group-hover:-rotate-12"
+                >Запишись</span
+              >На тест-драйв
+            </button>
+          </div>
+        </div>
+        <div class="flex overflow-hidden md:rotate-2 rotate-0 max-w-7xl">
+          <div
+            class="ml-[-5px] pl-[100%] w-[920px] h-24 animate-wiggle bg-runLine bg-center bg-repeat"
+          ></div>
+          <div
+            class="ml-[-5px] pl-[100%] w-[920px] h-24 animate-wiggle bg-runLine bg-center bg-repeat"
+          ></div>
+        </div>
+        <div class="relative min-h-[500px] bg-orange-50/30 flex items-center justify-center">
+          <!-- <div class="absolute rotate-12 top-10 border-dashed w-[200px] h-[200px] border-r-2 border-b-2 rounded-br-[110px] border-zinc-400"></div> -->
+          <div class="relative z-30 bg-zinc-100 after:bg-zinc-100 w-[300px] h-[200px] after:rounded-full  after:block  after:h-[200px] after:w-[200px] after:absolute after:top-0 after:-right-24 "></div>
+          <div class="relative z-20 bg-neutral-200 after:bg-neutral-200 w-[300px] h-[200px] after:rounded-full  after:block  after:h-[200px] after:w-[200px] after:absolute after:top-0 after:-right-24 "></div>
+          <div class="relative z-10 bg-zinc-100 after:bg-zinc-100 w-[300px] h-[200px] after:rounded-full  after:block  after:h-[200px] after:w-[200px] after:absolute after:top-0 after:-right-24 "></div>
+        
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>
