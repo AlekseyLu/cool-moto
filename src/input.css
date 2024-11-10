@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.ymaps-2-1-79-controls__control_toolbar,
+.ymaps-2-1-79-controls__control,
+.ymaps-2-1-79-map-copyrights-promo {
+    display: none !important;
+}

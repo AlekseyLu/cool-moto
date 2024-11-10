@@ -6,9 +6,11 @@ module.exports = {
       backgroundImage: {
         hero: "url('./images/hero.jpg')",
         runLine: "url('./images/running-line.png')",
+        about: "url('./images/about.jpg')",
       },
       backgroundPosition: {
         'center-top': 'center top',
+        'left-center': 'left center',
       },
       animation: {
         wiggle: "wiggle 4s linear infinite",
