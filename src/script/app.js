@@ -1,7 +1,9 @@
 (() => {
+  const header = document.querySelector("#header");
   const burgerBtn = document.querySelector("#burgerBtn");
   const menu = document.querySelector("#menu");
   const burgerCloseBtn = document.querySelector("#burgerCloseBtn");
+  const toTestBtn = document.querySelector("#toTest");
   const playBtnList = document.querySelectorAll("#videoBtn");
   const videoModal = document.querySelector("#videoModal");
   const closeModalBtn = document.querySelector("#closeModalBtn");
@@ -12,6 +14,7 @@
   const faqList = document.querySelectorAll("#question-faq");
 
   let countImg = 1;
+  let isVisible = false;
 
   const closeMenu = () => {
     menu.classList.remove("translate-x-0");
@@ -76,7 +79,7 @@
     faq.addEventListener("click", () => {
       const arrow = faq.querySelector("#arrow");
       const ansver = faq.querySelector("#answer-faq");
-      const heightAnsver =  Math.ceil(ansver.getBoundingClientRect().height);
+      const heightAnsver = Math.ceil(ansver.getBoundingClientRect().height);
 
       faqList.forEach((f, i) => {
         if (ind !== i) {
@@ -89,7 +92,68 @@
       faq.classList.toggle(`max-h-[calc(664px+96px)]`);
       arrow.classList.toggle("rotate-45");
       arrow.classList.toggle("rotate-[225deg]");
-
     });
+  });
+
+  if (window.scrollY > 210) {
+    header.classList.add(
+      "bg-zinc-600/50",
+      "sticky",
+      "top-0",
+      "z-[9999999]",
+      "backdrop-blur"
+    );
+  } else {
+    header.classList.remove(
+      "bg-zinc-600/50",
+      "sticky",
+      "top-0",
+      "z-[9999999]",
+      "backdrop-blur"
+    );
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 210) {
+      header.classList.add(
+        "bg-zinc-600/50",
+        "sticky",
+        "top-0",
+        "z-[9999999]",
+        "backdrop-blur",
+      );
+    } else {
+      header.classList.remove(
+        "bg-zinc-600/50",
+        "sticky",
+        "top-0",
+        "z-[9999999]",
+        "backdrop-blur",
+      );
+    }
+  });
+
+  const btnSpinning = [
+    { transform: "translateY(0)" },
+    { transform: "translateY(20px)" },
+    { transform: "translateY(0)" },
+  ];
+
+  const btnTiming = {
+        duration: 2000, 
+        easing: 'ease-in-out', 
+        fill: 'both',
+        iterations: Infinity,
+  };
+
+  
+  const initAnimate = toTestBtn.animate(btnSpinning, btnTiming);
+
+  toTestBtn.addEventListener("mouseover", () => {
+    initAnimate.pause();
+  });
+
+  toTestBtn.addEventListener("mouseout", () => {
+    initAnimate.play();
   });
 })();

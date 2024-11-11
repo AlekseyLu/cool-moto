@@ -7,6 +7,8 @@ module.exports = {
         hero: "url('./images/hero.jpg')",
         runLine: "url('./images/running-line.png')",
         about: "url('./images/about.jpg')",
+        sertificate: "url('./images/background_ticket.png')",
+        whillTicket: "url('./images/road_ticket.png')",
       },
       backgroundPosition: {
         'center-top': 'center top',
