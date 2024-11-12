@@ -1,68 +1,64 @@
 (() => {
-  const header = document.querySelector("#header");
   const burgerBtn = document.querySelector("#burgerBtn");
   const menu = document.querySelector("#menu");
   const burgerCloseBtn = document.querySelector("#burgerCloseBtn");
-  const toTestBtn = document.querySelector("#toTest");
+  const toTestBtn = document.querySelectorAll("#toTest");
   const playBtnList = document.querySelectorAll("#videoBtn");
   const videoModal = document.querySelector("#videoModal");
   const closeModalBtn = document.querySelector("#closeModalBtn");
   const linkList = document.querySelectorAll("#linkToSection");
-  const motoImg = document.querySelector("#motoImg");
-  const motoPrevImgBtn = document.querySelector("#motoPrevImgBtn");
-  const motoNextImgBtn = document.querySelector("#motoNextImgBtn");
-  const faqList = document.querySelectorAll("#question-faq");
-
-  let countImg = 1;
-  let isVisible = false;
+  const toGoRide = document.querySelector("#toGoRide");
+  const closeBtnToGoRideModal = document.querySelector("#closeToGoRideModal");
+  const toGoRideBtn = document.querySelector("#toGoRideBtn");
 
   const closeMenu = () => {
-    menu.classList.remove("translate-x-0");
-    menu.classList.add("-translate-x-full");
+    // menu.classList.remove("translate-x-0");
+    // menu.classList.add("-translate-x-full");
+    menu.classList.replace("translate-x-0", "-translate-x-full");
     document.body.classList.remove("overflow-hidden");
   };
 
   const openMenu = () => {
-    menu.classList.add("translate-x-0");
-    menu.classList.remove("-translate-x-full");
+    menu.classList.replace("-translate-x-full", "translate-x-0");
     document.body.classList.add("overflow-hidden");
   };
 
-  const modalOpen = () => {
-    videoModal.classList.remove("hidden");
-    videoModal.classList.add("flex");
+  const modalOpen = (item, ind) => {
+    item.classList.replace("hidden", "flex");
     document.body.classList.add("overflow-hidden");
   };
 
-  const modalClose = () => {
-    videoModal.classList.add("hidden");
-    videoModal.classList.remove("flex");
+  const modalClose = (item) => {
+    item.classList.replace("flex", "hidden");
     document.body.classList.remove("overflow-hidden");
   };
 
-  const changeMotoImg = (variant) => {
-    variant ? countImg++ : countImg--;
-    console.log(countImg);
-    motoImg.src = `./images/moto-${countImg}.jpg`;
-    motoPrevImgBtn.disabled = countImg < 2;
-    motoNextImgBtn.disabled = countImg > 3;
-  };
+  const sendFormToFoRide = (e) => {
+    e.preventDefault();
+    e.target.form.reset();
+    console.log("send")
+  }
+
+  toGoRideBtn.addEventListener("click", (e) => sendFormToFoRide(e));
 
   burgerBtn.addEventListener("click", openMenu);
 
   burgerCloseBtn.addEventListener("click", closeMenu);
 
-  playBtnList.forEach((btn) => {
-    btn.addEventListener("click", modalOpen);
+  toTestBtn.forEach(testBtn => testBtn.addEventListener("click", () => modalOpen(toGoRide)));
+  closeBtnToGoRideModal.addEventListener("click", () => modalClose(toGoRide));
+
+  playBtnList.forEach((btn, ind) => {
+    btn.addEventListener("click", () => modalOpen(videoModal, ind));
   });
 
   videoModal.addEventListener("click", (e) => {
     if (e.target === videoModal && e.target !== closeModalBtn) {
-      modalClose();
+      modalClose(videoModal);
     }
   });
 
-  closeModalBtn.addEventListener("click", modalClose);
+  closeModalBtn.addEventListener("click", () => modalClose(videoModal));
 
   linkList.forEach((link) => {
     link.addEventListener("click", () => {
@@ -71,66 +67,8 @@
     });
   });
 
-  motoPrevImgBtn.addEventListener("click", changeMotoImg.bind(null, false));
-
-  motoNextImgBtn.addEventListener("click", changeMotoImg.bind(null, true));
-
-  faqList.forEach((faq, ind) => {
-    faq.addEventListener("click", () => {
-      const arrow = faq.querySelector("#arrow");
-      const ansver = faq.querySelector("#answer-faq");
-      const heightAnsver = Math.ceil(ansver.getBoundingClientRect().height);
-
-      faqList.forEach((f, i) => {
-        if (ind !== i) {
-          const arrow = f.querySelector("#arrow");
-          f.classList.remove(`max-h-[calc(664px+96px)]`);
-          arrow.classList.replace("rotate-[225deg]", "rotate-45");
-        }
-      });
-
-      faq.classList.toggle(`max-h-[calc(664px+96px)]`);
-      arrow.classList.toggle("rotate-45");
-      arrow.classList.toggle("rotate-[225deg]");
-    });
-  });
-
-  if (window.scrollY > 210) {
-    header.classList.add(
-      "bg-zinc-600/50",
-      "sticky",
-      "top-0",
-      "z-[9999999]",
-      "backdrop-blur"
-    );
-  } else {
-    header.classList.remove(
-      "bg-zinc-600/50",
-      "sticky",
-      "top-0",
-      "z-[9999999]",
-      "backdrop-blur"
-    );
-  }
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 210) {
-      header.classList.add(
-        "bg-zinc-600/50",
-        "sticky",
-        "top-0",
-        "z-[9999999]",
-        "backdrop-blur",
-      );
-    } else {
-      header.classList.remove(
-        "bg-zinc-600/50",
-        "sticky",
-        "top-0",
-        "z-[9999999]",
-        "backdrop-blur",
-      );
-    }
+  linkList[0].addEventListener("click", () => {
+    window.scrollTo(0, 0);
   });
 
   const btnSpinning = [
@@ -140,20 +78,49 @@
   ];
 
   const btnTiming = {
-        duration: 2000, 
-        easing: 'ease-in-out', 
-        fill: 'both',
-        iterations: Infinity,
+    duration: 2000,
+    easing: "ease-in-out",
+    fill: "both",
+    iterations: Infinity,
   };
 
-  
-  const initAnimate = toTestBtn.animate(btnSpinning, btnTiming);
+  const initAnimate = toTestBtn[0].animate(btnSpinning, btnTiming);
 
-  toTestBtn.addEventListener("mouseover", () => {
+  toTestBtn[0].addEventListener("mouseover", () => {
     initAnimate.pause();
   });
 
-  toTestBtn.addEventListener("mouseout", () => {
+  toTestBtn[0].addEventListener("mouseout", () => {
     initAnimate.play();
+  });
+
+  new Accordion(".accordion-container", {
+    duration: 400,
+    showMultiple: false,
+  });
+
+  const swiper = new Swiper(".swiper1", {
+    speed: 400,
+    spaceBetween: 100,
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 50,
+    pagination: {
+      el: ".swiper-pagination1",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next1",
+      prevEl: ".swiper-button-prev1",
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar1",
+    },
+    breakpoints: {
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 1.1,
+        spaceBetween: 50,
+      },
+    },
   });
 })();
