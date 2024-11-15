@@ -12,6 +12,7 @@ module.exports = {
         rideSummer: "url(./images/for-video-summer.png)",
         rideWinter: "url(./images/for-video-winter.png)",
         rideSnowbike: "url(./images/snowmobile.png)",
+        sertificateImage: "url(./images/sert_bg.png)"
 
       },
       backgroundPosition: {

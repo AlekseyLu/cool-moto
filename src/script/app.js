@@ -1,8 +1,4 @@
-const videos = [
-  "https://motoru.ru/userfiles/video/otzyv3.mp4",
-  "https://motoru.ru/userfiles/video/otzyv2.mp4",
-  "https://motoru.ru/userfiles/video/otzyv1.mp4",
-];
+import { giftCertificates, videos } from "../utils/const.js";
 
 const burgerBtn = document.querySelector("#burgerBtn");
 const menu = document.querySelector("#menu");
@@ -16,6 +12,7 @@ const toGoRide = document.querySelector("#toGoRide");
 const closeBtnToGoRideModal = document.querySelector("#closeToGoRideModal");
 const toGoRideBtn = document.querySelector("#toGoRideBtn");
 const content = document.querySelector("#content");
+const certificateList = document.querySelector('[data-id="certificateList"]');
 
 function createVideoElement(url) {
   const video = document.createElement("video");
@@ -25,6 +22,94 @@ function createVideoElement(url) {
   video.setAttribute("width", "100%");
   video.setAttribute("type", "video/mp4");
   return video;
+}
+
+/**
+ * <li class="grid grid-cols-2 justify-items-center mb-20 gap-8">
+      <div
+        class="sm:col-span-1 sm:mb-0 mb-4 col-span-2 sm:text-left text-center max-w-md content-center justify-items-center">
+        <h3 class="mb-5 font-bold text-3xl lg:text-5xl">
+          Видео с нашего проката летом
+        </h3>
+        <p class="font-normal">
+          Посмотрите видео, и попробуйте ощутить положительные эмоции и
+          почувствовать скорость.
+        </p>
+      </div>
+      <div
+        class="group relative sm:col-span-1 col-span-2 content-center justify-items-center rounded-lg overflow-hidden shadow-xl shadow-black/60">
+        <img src="./images/for-video-summer.png" alt="123" class="w-full h-full object-cover">
+        <div
+          class="absolute lg:top-[120%] top-0 transition-all lg:group-hover:top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-black/40">
+          <button data-id="videoBtn" class="font-black text-white">Watch now</button>
+        </div>
+      </div>
+    </li>
+ */
+
+function createCertificateElement(
+  imageUrl,
+  titleTextContent,
+  descriptionTextContent,
+  ind
+) {
+  const evenNumber = ind % 2 === 0;
+  const li = document.createElement("li");
+  const descriptionContainer = document.createElement("div");
+  const descriptionTitle = document.createElement("h3");
+  const descriptionText = document.createElement("p");
+  const imageContainer = document.createElement("div");
+  const image = document.createElement("img");
+
+  li.classList.add(
+    "grid",
+    "grid-cols-2",
+    "justify-items-center",
+    "mb-20",
+    "gap-8"
+  );
+  descriptionContainer.classList.add(
+    "sm:col-span-1",
+    "sm:mb-0",
+    "mb-4",
+    "col-span-2",
+    "sm:text-left",
+    "text-center",
+    "max-w-md",
+    "content-center",
+    "justify-items-center"
+  );
+  descriptionTitle.classList.add(
+    "mb-5",
+    "font-bold",
+    "text-3xl",
+    "lg:text-5xl"
+  );
+  descriptionText.classList.add("font-normal");
+  imageContainer.classList.add(
+    "relative",
+    "sm:col-span-1",
+    "col-span-2",
+    "content-center",
+    "justify-items-center",
+    "rounded-lg",
+    "overflow-hidden",
+    "shadow-xl",
+    "shadow-black/60"
+  );
+  descriptionTitle.textContent = titleTextContent;
+  descriptionText.textContent = descriptionTextContent;
+  image.classList.add("w-full", "h-full", "object-cover");
+  image.setAttribute("src", imageUrl);
+  image.setAttribute("alt", titleTextContent);
+  descriptionContainer.append(descriptionTitle, descriptionText);
+  imageContainer.append(image);
+  const evenArr = [descriptionContainer, imageContainer];
+  const notEvenArr = [imageContainer, descriptionContainer];
+
+  evenNumber ? li.append(...evenArr) : li.append(...notEvenArr);
+  
+  return li;
 }
 
 const closeMenu = () => {
@@ -153,4 +238,10 @@ const swiper = new Swiper(".swiper1", {
   scrollbar: {
     el: ".swiper-scrollbar1",
   },
+});
+
+// certificateList.innerHTML = "";
+giftCertificates.forEach(({ title, description, image }, ind) => {
+  const certItem = createCertificateElement(image, title, description, ind);
+  certificateList.appendChild(certItem);
 });

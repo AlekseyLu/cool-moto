@@ -558,10 +558,6 @@ video {
   position: static;
 }
 
-.\!fixed {
-  position: fixed !important;
-}
-
 .fixed {
   position: fixed;
 }
@@ -707,8 +703,16 @@ video {
   margin-left: -5px;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -1363,6 +1367,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .\!font-medium {
   font-weight: 500 !important;
 }
@@ -1429,6 +1438,16 @@ video {
 .text-zinc-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 91 / var(--tw-text-opacity));
+}
+
+.text-orange-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
+}
+
+.text-red-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 202 202 / var(--tw-text-opacity));
 }
 
 .shadow {
@@ -1543,19 +1562,9 @@ video {
   position: absolute;
 }
 
-.before\:-bottom-16::before {
-  content: var(--tw-content);
-  bottom: -4rem;
-}
-
 .before\:-bottom-2::before {
   content: var(--tw-content);
   bottom: -0.5rem;
-}
-
-.before\:-left-6::before {
-  content: var(--tw-content);
-  left: -1.5rem;
 }
 
 .before\:-left-\[14px\]::before {
@@ -1573,29 +1582,9 @@ video {
   z-index: -1;
 }
 
-.before\:z-50::before {
-  content: var(--tw-content);
-  z-index: 50;
-}
-
-.before\:z-\[500\]::before {
-  content: var(--tw-content);
-  z-index: 500;
-}
-
-.before\:z-\[9999999\]::before {
-  content: var(--tw-content);
-  z-index: 9999999;
-}
-
 .before\:h-24::before {
   content: var(--tw-content);
   height: 6rem;
-}
-
-.before\:h-28::before {
-  content: var(--tw-content);
-  height: 7rem;
 }
 
 .before\:h-\[1\.75rem\]::before {
@@ -1619,12 +1608,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.before\:rotate-6::before {
-  content: var(--tw-content);
-  --tw-rotate: 6deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .before\:rotate-\[176deg\]::before {
   content: var(--tw-content);
   --tw-rotate: 176deg;
@@ -1635,12 +1618,6 @@ video {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.before\:bg-white::before {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .before\:bg-whillTicket::before {
@@ -2117,11 +2094,6 @@ video {
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
-  }
-
-  .lg\:before\:w-\[950px\]::before {
-    content: var(--tw-content);
-    width: 950px;
   }
 
   .group:hover .lg\:group-hover\:top-0 {

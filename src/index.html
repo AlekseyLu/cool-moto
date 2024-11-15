@@ -2,19 +2,20 @@
 <html lang="en" class="scroll-smooth">
 
 <link>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./output.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=7a41949e-8a83-4ddf-a9a8-fda81546181c&lang=ru_RU"
-    type="text/javascript"></script>
-  <script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="./script/app.js" defer type="module"></script>
-  <script src="./script/map.js" defer type="module"></script>
-  <link rel="icon" href="./images/favicon.png"></link>
-  <title>Document</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="./output.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script defer src="https://api-maps.yandex.ru/2.1/?apikey=7a41949e-8a83-4ddf-a9a8-fda81546181c&lang=ru_RU"
+  type="text/javascript"></script>
+<script src="https://unpkg.com/accordion-js@3.3.4/dist/accordion.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script/app.js" defer type="module"></script>
+<script src="./script/map.js" defer type="module"></script>
+<link rel="icon" href="./images/favicon.png">
+</link>
+<title>Document</title>
 </head>
 
 <body class="mx-auto min-h-screen font-medium text-xl min-w-96 max-w-[2000px] overflow-x-hidden">
@@ -222,6 +223,21 @@
                 Посмотрите видео, и попробуйте ощутить положительные эмоции и
                 почувствовать скорость.
               </p>
+              <a href="#" class="flex items-center text-base text-red-500 font-bold md:hover:text-red-700 transition"><span>Подробнее</span>
+                <?xml version="1.0" ?><svg enable-background="new 0 0 32 32" id="Слой_1" version="1.1"
+                  viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <path
+                    d="M24.285,11.284L16,19.571l-8.285-8.288c-0.395-0.395-1.034-0.395-1.429,0  c-0.394,0.395-0.394,1.035,0,1.43l8.999,9.002l0,0l0,0c0.394,0.395,1.034,0.395,1.428,0l8.999-9.002  c0.394-0.395,0.394-1.036,0-1.431C25.319,10.889,24.679,10.889,24.285,11.284z"
+                    fill="currentColor" id="Expand_More" />
+                  <g />
+                  <g />
+                  <g />
+                  <g />
+                  <g />
+                  <g />
+                </svg>
+              </a>
             </div>
             <div
               class="group relative sm:col-span-1 col-span-2 content-center justify-items-center rounded-lg overflow-hidden shadow-xl shadow-black/60">
@@ -648,31 +664,12 @@
         <h2 class="mb-10 sm:px-10 px-4 font-black uppercase lg:text-6xl text-4xl text-purple-950">
           Подарочные сертификаты
         </h2>
-        <div class="grid grid-cols-2 justify-items-center mx-auto sm:px-10 px-4 items-center">
-          <img src="./images/ticket.png" alt="sertificate" class="md:col-span-1 col-span-2" />
-          <ul class="md:col-span-1 col-span-2 p-4 py-10">
-            <li class="mb-8 font-normal">
-              У нас ты можешь приобрести подарочные сертификаты на обучение
-              езде на мотоцикле и на выезд на маршрут любой сложности с
-              инструктором.
-            </li>
-            <li class="mb-8 font-normal">
-              Стоимость сертификата равняется стоимости соответствующей услуги
-              и составляет от 3 500 рублей (часовое обучение азам), верхняя
-              планка на ваше усмотрение
-            </li>
-            <li class="mb-8 font-normal">
-              Сертификат вышлем тебе на электронную почту, и ты сможешь
-              распечатать его возле дома.
-            </li>
-            <li class="group">
-              <button
-                class="block px-10 p-6 bg-purple-950 text-3xl text-white uppercase font-black rounded-xl md:group-hover:bg-purple-700 group-active:bg-purple-700 transition">
-                Купить
-              </button>
-            </li>
+        <div class="flex flex-col items-center justify-center gap-10 mx-auto px-4 sm:px-2 max-w-2xl">
+
+          <ul class="py-10" data-id="certificateList">
           </ul>
         </div>
+
       </section>
     </main>
     <footer class="md:py-40 py-10 bg-purple-950">
