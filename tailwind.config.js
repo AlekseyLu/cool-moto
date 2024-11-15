@@ -1,15 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // important: true,
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('./images/hero.jpg')",
+        hero: "url('./images/hero_bg.png')",
         runLine: "url('./images/running-line.png')",
-        about: "url('./images/about.jpg')",
-        sertificate: "url('./images/background_ticket.png')",
+        about: "url('./images/about-2.jpg')",
+        certificate: "url('./images/certificate.png')",
         whillTicket: "url('./images/road_ticket.png')",
+        rideSummer: "url(./images/for-video-summer.png)",
+        rideWinter: "url(./images/for-video-winter.png)",
+        rideSnowbike: "url(./images/snowmobile.png)",
+
       },
       backgroundPosition: {
         'center-top': 'center top',

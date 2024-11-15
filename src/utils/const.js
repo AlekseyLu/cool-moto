@@ -52,3 +52,9 @@ export const moto = [
       "Надёжный, производительный и мощный мотоцикл с современным агрессивным дизайном для тех, кто не ищет лёгких путей",
   },
 ];
+
+export const videos = [
+  "https://motoru.ru/userfiles/video/otzyv3.mp4",
+  "https://motoru.ru/userfiles/video/otzyv2.mp4",
+  "https://motoru.ru/userfiles/video/otzyv1.mp4"
+];
