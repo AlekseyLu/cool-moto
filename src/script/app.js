@@ -1,5 +1,7 @@
 import { giftCertificates, videos } from "../utils/const.js";
 
+const NUMBER_CERTIFICATE_CARDS = 4;
+
 const burgerBtn = document.querySelector("#burgerBtn");
 const menu = document.querySelector("#menu");
 const burgerCloseBtn = document.querySelector("#burgerCloseBtn");
@@ -13,6 +15,7 @@ const closeBtnToGoRideModal = document.querySelector("#closeToGoRideModal");
 const toGoRideBtn = document.querySelector("#toGoRideBtn");
 const content = document.querySelector("#content");
 const certificateList = document.querySelector('[data-id="certificateList"]');
+const visibleMoreButton = document.querySelector('[data-id="visible-more-certificate"]');
 
 function createVideoElement(url) {
   const video = document.createElement("video");
@@ -47,68 +50,167 @@ function createVideoElement(url) {
     </li>
  */
 
-function createCertificateElement(
-  imageUrl,
-  titleTextContent,
-  descriptionTextContent,
-  ind
-) {
-  const evenNumber = ind % 2 === 0;
-  const li = document.createElement("li");
-  const descriptionContainer = document.createElement("div");
-  const descriptionTitle = document.createElement("h3");
-  const descriptionText = document.createElement("p");
-  const imageContainer = document.createElement("div");
-  const image = document.createElement("img");
+// function createCertificateElement(
+//   imageUrl,
+//   titleTextContent,
+//   descriptionTextContent,
+//   ind
+// ) {
+//   const evenNumber = ind % 2 === 0;
+//   const li = document.createElement("li");
+//   const descriptionContainer = document.createElement("div");
+//   const descriptionTitle = document.createElement("h3");
+//   const descriptionText = document.createElement("p");
+//   const imageContainer = document.createElement("div");
+//   const image = document.createElement("img");
+//   const link = document.createElement("a");
 
-  li.classList.add(
+//   li.classList.add(
+//     "grid",
+//     "grid-cols-2",
+//     "justify-items-center",
+//     "mb-20",
+//     "gap-8"
+//   );
+//   descriptionContainer.classList.add(
+//     "sm:col-span-1",
+//     "sm:mb-0",
+//     "mb-4",
+//     "col-span-2",
+//     "sm:text-left",
+//     "text-center",
+//     "max-w-md",
+//     "content-center",
+//     "justify-items-center"
+//   );
+//   descriptionTitle.classList.add(
+//     "mb-5",
+//     "font-bold",
+//     "text-3xl",
+//     "lg:text-5xl"
+//   );
+//   descriptionText.classList.add("font-normal");
+//   imageContainer.classList.add(
+//     "relative",
+//     "sm:col-span-1",
+//     "col-span-2",
+//     "content-center",
+//     "justify-items-center",
+//     "rounded-lg",
+//     "overflow-hidden",
+//     "shadow-xl",
+//     "shadow-black/60"
+//   );
+//   link.classList.add();
+//   descriptionTitle.textContent = titleTextContent;
+//   descriptionText.textContent = descriptionTextContent;
+//   image.classList.add("w-full", "h-full", "object-cover");
+//   image.setAttribute("src", imageUrl);
+//   image.setAttribute("alt", titleTextContent);
+//   descriptionContainer.append(descriptionTitle, descriptionText);
+//   imageContainer.append(image);
+//   const evenArr = [descriptionContainer, imageContainer];
+//   const notEvenArr = [imageContainer, descriptionContainer];
+
+//   evenNumber ? li.append(...evenArr) : li.append(...notEvenArr);
+
+//   return li;
+// }
+
+/**
+ * create cert with 2 coloms
+ */
+
+function createCustomElement(item, classes) {
+  const element = document.createElement(item);
+  if (classes.length > 0) {
+    element.classList.add(...classes);
+  }
+  return element;
+}
+
+function createCertificateElement(
+  id,
+  dataId,
+  title,
+  description,
+  image,
+  priceStart,
+  icon
+) {
+  const li = createCustomElement("li", [
     "grid",
-    "grid-cols-2",
-    "justify-items-center",
-    "mb-20",
-    "gap-8"
-  );
-  descriptionContainer.classList.add(
-    "sm:col-span-1",
-    "sm:mb-0",
-    "mb-4",
-    "col-span-2",
-    "sm:text-left",
-    "text-center",
-    "max-w-md",
-    "content-center",
-    "justify-items-center"
-  );
-  descriptionTitle.classList.add(
-    "mb-5",
-    "font-bold",
-    "text-3xl",
-    "lg:text-5xl"
-  );
-  descriptionText.classList.add("font-normal");
-  imageContainer.classList.add(
-    "relative",
-    "sm:col-span-1",
-    "col-span-2",
-    "content-center",
-    "justify-items-center",
+    "grid-cols-3",
+    "min-h-60",
     "rounded-lg",
     "overflow-hidden",
-    "shadow-xl",
-    "shadow-black/60"
-  );
-  descriptionTitle.textContent = titleTextContent;
-  descriptionText.textContent = descriptionTextContent;
-  image.classList.add("w-full", "h-full", "object-cover");
-  image.setAttribute("src", imageUrl);
-  image.setAttribute("alt", titleTextContent);
-  descriptionContainer.append(descriptionTitle, descriptionText);
-  imageContainer.append(image);
-  const evenArr = [descriptionContainer, imageContainer];
-  const notEvenArr = [imageContainer, descriptionContainer];
+    "shadow-md",
+    "shadow-zinc-500",
+  ]);
+  const descriptionContainer = createCustomElement("div", [
+    "col-span-2",
+    "flex",
+    "flex-col",
+    "justify-between",
+    "sm:p-6",
+    "p-4",
+  ]);
+  const descriptionWrapper = createCustomElement("div", []);
+  const descriptionTitle = createCustomElement("h2", [
+    "lg:text-2xl",
+    "text-xl",
+    "line-clamp-2",
+    "mb-4",
+  ]);
+  const descriptionText = createCustomElement("p", [
+    "sm:line-clamp-3",
+    "line-clamp-5",
+    "lg:text-base",
+    "text-sm",
+  ]);
+  const footerContainer = createCustomElement("div", [
+    "flex",
+    "items-center",
+    "justify-between",
+  ]);
+  const moreButton = createCustomElement("button", [
+    "group",
+    "flex",
+    "items-center",
+    "text-base",
+    "text-red-500",
+    "font-bold",
+    "md:hover:text-red-700",
+    "transition",
+    "active:text-red-700",
+  ]);
 
-  evenNumber ? li.append(...evenArr) : li.append(...notEvenArr);
-  
+  const moreButtonText = createCustomElement("span", [
+    "group-hover:text-red-400",
+  ]);
+  const moreButtonIcon = createCustomElement("span", []);
+  const priceElement = createCustomElement("span", ["text-sm"]);
+  const imageElement = createCustomElement("img", [
+    "col-span-1",
+    "object-cover",
+    "h-full",
+    "object-center",
+  ]);
+  li.setAttribute("data-id", id);
+  moreButton.setAttribute("data-id", dataId);
+  descriptionTitle.textContent = title;
+  descriptionText.textContent = description;
+  priceElement.textContent = priceStart;
+  moreButtonIcon.innerHTML = icon;
+  moreButtonText.textContent = "Подробнее";
+  imageElement.setAttribute("src", image);
+  imageElement.setAttribute("alt", title);
+
+  descriptionContainer.append(descriptionWrapper, footerContainer);
+  descriptionWrapper.append(descriptionTitle, descriptionText);
+  moreButton.append(moreButtonText, moreButtonIcon);
+  footerContainer.append(moreButton, priceElement);
+  li.append(descriptionContainer, imageElement);
   return li;
 }
 
@@ -240,8 +342,76 @@ const swiper = new Swiper(".swiper1", {
   },
 });
 
-// certificateList.innerHTML = "";
-giftCertificates.forEach(({ title, description, image }, ind) => {
-  const certItem = createCertificateElement(image, title, description, ind);
-  certificateList.appendChild(certItem);
+giftCertificates.forEach(
+  ({ id, dataId, title, description, image, priceStart, icon }, ind) => {
+    const certItem = createCertificateElement(
+      id,
+      dataId,
+      title,
+      description,
+      image,
+      priceStart,
+      icon
+    );
+    if (ind < NUMBER_CERTIFICATE_CARDS) {
+      certificateList.appendChild(certItem);
+    } else {
+      certItem.classList.replace("grid", "hidden");
+      certificateList.appendChild(certItem);
+    }
+  }
+);
+
+visibleMoreButton.addEventListener("click", () => {
+  const certificateListElement = document.querySelectorAll(`[data-id="${giftCertificates[0].id}"]`);
+  const certificateHiddenElement = Array.from(certificateListElement).slice(4);
+  certificateHiddenElement.forEach(certificateElement => {
+    certificateElement.classList.replace("hidden", "grid");
+  })
+  visibleMoreButton.classList.replace("block", "hidden");
+});
+
+function changeContentModalCertificate(element, ind) {
+  const certificate = giftCertificates[ind];
+  const imageElement = element.querySelector('[data-id="image-certificate-modal"]');
+  const titleElement = element.querySelector('[data-id="title-certificate-modal"]');
+  const priceElement = element.querySelector('[data-id="price-certificate-modal"]');
+  const descriptionElement = element.querySelector('[data-id="description-certificate-modal"]');
+  const listFeature = element.querySelector('[data-id="list-certificate-modal"]');
+  const titleFeature = element.querySelector('[data-id="title-list-certificate-modal"]');
+  titleFeature.classList.add("hidden");
+  listFeature.classList.add("hidden");
+  imageElement.setAttribute("src", certificate.image);
+  titleElement.textContent = certificate.title;
+  priceElement.textContent = certificate.priceStart + " " + certificate.priceFull;
+  descriptionElement.textContent = certificate.description;
+  if (certificate.feature.length > 0) {
+    listFeature.classList.replace("hidden", "block");
+    titleFeature.classList.replace("hidden", "block");
+    certificate.feature.forEach((feature) => {
+      const item = createCustomElement("li", []);
+      item.textContent = feature;
+      listFeature.append(item);
+    });
+  }
+}
+
+const moreButtonCertificate = document.querySelectorAll(
+  `[data-id="${giftCertificates[0].dataId}"]`
+);
+const closeButtonCertificateModal = document.querySelector(
+  '[data-id="closeCertificateModal"]'
+);
+const certificateModal = document.querySelector('[data-id="certificateModal"]');
+
+moreButtonCertificate.forEach((moreButton, ind) => {
+  moreButton.addEventListener("click", () => {
+    modalOpen(certificateModal);
+    changeContentModalCertificate(certificateModal, ind);
+    document.body.classList.add("overflow-y-hidden");
+  });
+});
+closeButtonCertificateModal.addEventListener("click", () => {
+  modalClose(certificateModal);
+  document.body.classList.remove("overflow-y-hidden");
 });
