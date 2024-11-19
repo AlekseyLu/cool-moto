@@ -26,11 +26,9 @@
   </head>
 
   <body
-    class="mx-auto font-medium text-xl min-w-96 max-w-[2000px] overflow-x-hidden"
+    class="mx-auto font-medium text-xl min-w-80 max-w-[2000px] overflow-x-hidden mr-1"
   >
-    <div
-      class="relative bg-hero bg-center-top bg-no-repeat bg-[length:1450px]"
-    >
+    <div class="relative bg-hero bg-center-top bg-no-repeat bg-[length:1450px]">
       <!-- modal with phone number -->
       <div
         id="toGoRide"
@@ -94,11 +92,11 @@
         class="sticky top-0 z-50 backdrop-blur bg-zinc-600/50"
       >
         <div
-          class="max-w-7xl px-10 py-4 flex items-center justify-between mx-auto text-white transition-all"
+          class="container lg:px-20 px-4 py-2 flex items-center justify-between mx-auto text-white transition-all"
         >
           <!-- Burger btn -->
           <button
-            class="group active:scale-110 transition lg:hidden flex flex-col gap-2 items-center md:justify-center p-4 w-16 h-16"
+            class="group active:scale-110 transition xl:hidden flex flex-col gap-2 items-center md:justify-center p-4 w-16 h-16"
             id="burgerBtn"
           >
             <span
@@ -113,7 +111,7 @@
           </button>
           <a href="#"><img src="./images/logo.svg" alt="Logo" class="" /></a>
           <!-- Desktop menu -->
-          <nav class="lg:block hidden md:col-span-2">
+          <nav class="xl:block hidden md:col-span-2">
             <ul
               class="flex gap-5 lg:gap-10 items-center sm:justify-center justify-end"
             >
@@ -180,7 +178,7 @@
           <!-- Mobile menu -->
           <nav
             id="menu"
-            class="overflow-y-auto lg:hidden absolute top-0 right-0 left-0 bottom-0 -translate-x-full transition-transform p-10 min-h-screen !z-[9] !bg-black"
+            class="overflow-y-auto xl:hidden absolute top-0 right-0 left-0 bottom-0 -translate-x-full transition-transform p-10 min-h-screen !z-[9] !bg-black"
           >
             <ul class="flex flex-col gap-8 items-start justify-center">
               <li class="flex justify-end items-center w-full">
@@ -193,7 +191,11 @@
                   ></span>
                 </button>
               </li>
-              <li class="group" data-id="linkToSection">
+              <div
+                data-id="navigate-list"
+                class="flex flex-col gap-8 items-start justify-center"
+              ></div>
+              <!-- <li class="group" data-id="linkToSection">
                 <a href="#" class="group-active:text-purple-400 transition"
                   >Home</a
                 >
@@ -231,7 +233,7 @@
                   class="group-active:text-purple-400 transition"
                   >Contacts</a
                 >
-              </li>
+              </li> -->
               <li class="group min-w-36" data-id="linkToSection">
                 <a
                   href="tel:+79956243602"
@@ -275,7 +277,7 @@
       <main>
         <!-- hero -->
         <section
-          class="grid md:grid-cols-2 sm:py-64 py-36 px-10 mx-auto container text-white"
+          class="overflow-hidden grid md:grid-cols-2 sm:py-52 md:py-64 pt-36 pb-20 lg:px-20 px-4 mx-auto container text-white"
         >
           <h1 class="font-black uppercase lg:text-7xl text-5xl md:mb-0 mb-10">
             Почувствуй драйв и<br />
@@ -288,10 +290,10 @@
             </h2>
             <button
               data-id="toTest"
-              class="mx-auto group relative px-5 py-4 bg-purple-950 md:hover:bg-purple-700 active:bg-purple-600 rounded-md text-right w-80 uppercase font-black text-2xl shadow-lg transition-all"
+              class="mx-auto group relative px-5 py-4 bg-purple-950 md:hover:bg-purple-700 active:bg-purple-600 rounded-md text-right w-64 sm:w-80 uppercase font-black text-2xl shadow-lg transition-all"
             >
               <span
-                class="absolute right-20 -top-4 font-sans italic text-rose-600 text-5xl -rotate-12 sm:group-hover:animate-bounce group-hover:-rotate-12"
+                class="absolute -top-8 right-4 sm:right-20 sm:-top-4 font-sans italic text-rose-600 text-5xl -rotate-12 sm:group-hover:animate-bounce group-hover:-rotate-12"
                 >Запишись</span
               >На тест-драйв
             </button>
@@ -303,10 +305,14 @@
         <div class="ml-[-5px] pl-[100%] w-[920px] h-24 bg-runLine bg-center bg-repeat"></div>
       </div> -->
         <!-- About -->
-        <section id="about" class="mx-auto container px-4 sm:px-10 relative bg-white">
-          <div
-            class="mx-auto pt-2 pb-[65%] md:py-48 sm:py-24 lg:pr-[600px] sm:pr-[45%] bg-about bg-no-repeat bg-bottom sm:bg-[right_center] lg:bg-[right_center] bg-contain"
-          >
+        <section
+          id="about"
+          class="mx-auto container px-4 lg:px-20 relative bg-white bg-about bg-no-repeat bg-bottom md:bg-[right_-12rem_center] lg:bg-[right_-5rem_center] xl:bg-[right_2.5rem_center] bg-[length:35rem] md:bg-contain"
+        >
+          <!-- <div
+            class="mx-auto pt-2 pb-[65%] md:py-48 sm:py-24 lg:pr-[600px] sm:pr-[45%]  bg-bottom sm:bg-[right_center] lg:bg-[right_center] bg-contain"
+          > -->
+          <div class="mx-auto md:py-28 py-10 pr-0 md:pr-[40%] pb-[30rem] md:pb-28">
             <h2
               class="mb-10 font-black uppercase lg:text-6xl text-5xl text-purple-950"
             >
@@ -476,7 +482,7 @@
           class="relative overflow-hidden px-4 py-24 pb-0 sm:pb-6 sm:py-40 text-zinc-200 after:z-50 bg-purple-950 after:absolute after:-top-16 after:-right-2 after:w-[900px] after:h-24 after:bg-white after:rotate-6"
         >
           <h2
-            class="mb-10 font-black uppercase lg:text-6xl text-5xl text-zinc-200 mx-auto container"
+            class="mb-10 font-black uppercase lg:text-6xl text-4xl sm:text-5xl text-zinc-200 mx-auto container"
           >
             Мотоциклы
           </h2>
@@ -484,7 +490,7 @@
             <div class="swiper swiper1">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-5xl">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
                     Suzuki Djebel 250 (XC)
                   </h2>
                   <div class="grid grid-cols-2 lg:mx-16">
@@ -547,7 +553,7 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-5xl">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
                     Suzuki Djebel 250 (XC)
                   </h2>
                   <div class="grid grid-cols-2 lg:mx-16">
@@ -610,7 +616,7 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-5xl">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
                     Suzuki Djebel 250 (XC)
                   </h2>
                   <div class="grid grid-cols-2 lg:mx-16">
@@ -673,7 +679,7 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-5xl">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
                     Suzuki Djebel 250 (XC)
                   </h2>
                   <div class="grid grid-cols-2 lg:mx-16">
@@ -874,7 +880,7 @@
         >
           <div>
             <h2
-              class="mb-6 sm:mb-10 font-black uppercase lg:text-6xl text-5xl text-purple-950"
+              class="mb-6 sm:mb-10 font-black uppercase lg:text-6xl text-4xl sm:text-5xl text-purple-950"
             >
               Частые вопросы
             </h2>
@@ -886,7 +892,7 @@
                 <h2 class="ac-header !border-b !border-zinc-300">
                   <button
                     type="button"
-                    class="ac-trigger !py-5 truncate !text-4xl !font-medium"
+                    class="ac-trigger !py-5 truncate !text-2xl sm:!text-5xl !font-medium"
                   >
                     Вопрос 1
                   </button>
@@ -907,7 +913,7 @@
                 <h2 class="ac-header !border-b !border-zinc-300">
                   <button
                     type="button"
-                    class="ac-trigger !py-5 truncate !text-4xl !font-medium"
+                    class="ac-trigger !py-5 truncate !text-2xl sm:!text-5xl !font-medium"
                   >
                     Очень длинный при дилнный вопрос который не помещается в
                     одну строку
@@ -936,7 +942,7 @@
                 <h2 class="ac-header !border-b !border-zinc-300">
                   <button
                     type="button"
-                    class="ac-trigger !py-5 truncate !text-4xl !font-medium"
+                    class="ac-trigger !py-5 truncate !text-2xl sm:!text-5xl !font-medium"
                   >
                     Вопрос 1
                   </button>
@@ -957,9 +963,9 @@
         <section id="contacts" class="mx-auto container overflow-hidden">
           <div id="map" style="width: 100%; height: 500px" class="relative">
             <ul
-              class="absolute top-2/4 left-10 p-8 divide-y -translate-y-2/4 shadow-xl bg-purple-950/60 text-white z-10 h-96"
+              class="absolute top-2/4 left-[3%] sm:left-10 p-4 sm:p-8 divide-y -translate-y-2/4 shadow-xl bg-purple-950/60 text-white z-10 h-96"
             >
-              <h2 class="mb-10 font-black uppercase lg:text-6xl text-5xl">
+              <h2 class="mb-10 font-black uppercase lg:text-6xl text-4xl sm:text-5xl">
                 Контакты
               </h2>
               <li class="py-4 group">
@@ -995,13 +1001,14 @@
           class="mx-auto container px-6 py-20 bg-sertificate bg-center bg-no-repeat bg-cover after:absolute after:-top-8 after:right-0 after:w-full after:h-24 after:bg-whillTicket after:-rotate-2 before:absolute before:-bottom-2 before:right-0 before:w-full before:h-24 before:bg-whillTicket before:rotate-[176deg]"
         >
           <h2
-            class="mb-2 sm:mb-10 font-black uppercase lg:text-6xl text-4xl text-purple-950"
+            class="mb-2 sm:mb-10 font-black uppercase lg:text-6xl text-4xl sm:text-5xl text-purple-950"
           >
             Подарочные сертификаты
           </h2>
-          <ul class="py-10 grid md:grid-cols-2 gap-4" data-id="certificateList">
-            
-          </ul>
+          <ul
+            class="py-10 box grid md:grid-cols-2 gap-4"
+            data-id="certificateList"
+          ></ul>
           <button
             data-id="visible-more-certificate"
             class="block mx-auto group relative px-5 py-4 text-white bg-purple-950 md:hover:bg-purple-700 active:bg-purple-600 rounded-md uppercase font-black text-2xl shadow-lg transition-all"

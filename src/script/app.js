@@ -1,4 +1,4 @@
-import { giftCertificates, videos } from "../utils/const.js";
+import { giftCertificates, videos, navigateList } from "../utils/const.js";
 
 const NUMBER_CERTIFICATE_CARDS = 4;
 
@@ -9,13 +9,24 @@ const toTestBtn = document.querySelectorAll('[data-id="toTest"]');
 const playBtnList = document.querySelectorAll('[data-id="videoBtn"]');
 const videoModal = document.querySelector("#videoModal");
 const closeVideoModalBtn = document.querySelector("#closeVidepModalBtn");
-const linkList = document.querySelectorAll('[data-id="linkToSection"]');
 const toGoRide = document.querySelector("#toGoRide");
 const closeBtnToGoRideModal = document.querySelector("#closeToGoRideModal");
 const toGoRideBtn = document.querySelector("#toGoRideBtn");
 const content = document.querySelector("#content");
 const certificateList = document.querySelector('[data-id="certificateList"]');
 const visibleMoreButton = document.querySelector('[data-id="visible-more-certificate"]');
+const navigateListElement = document.querySelector('[data-id="navigate-list"]');
+
+function createNavigateItemElement(dataId, label, anchorSection) {
+  const li = createCustomElement("li", ['group']);
+  const link = createCustomElement("a", ['group-active:text-purple-400', 'transition']);
+
+  li.setAttribute("data-id", dataId);
+  link.setAttribute("href", anchorSection);
+  link.textContent = label;
+  li.append(link);
+  return li;
+}
 
 function createVideoElement(url) {
   const video = document.createElement("video");
@@ -33,6 +44,10 @@ function createCustomElement(item, classes) {
     element.classList.add(...classes);
   }
   return element;
+}
+
+function changeNumberFormat(number) {
+  return new Intl.NumberFormat("ru-RU", {style: 'currency',maximumSignificantDigits: 4, currency: "RUB"}).format(number)
 }
 
 function createCertificateElement(
@@ -107,7 +122,7 @@ function createCertificateElement(
   moreButton.setAttribute("data-id", dataId);
   descriptionTitle.textContent = title;
   descriptionText.textContent = description;
-  priceElement.textContent = priceStart;
+  priceElement.textContent = `от ${changeNumberFormat(priceStart)}`;
   moreButtonIcon.innerHTML = icon;
   moreButtonText.textContent = "Подробнее";
   imageElement.setAttribute("src", image);
@@ -153,6 +168,13 @@ const sendFormToFoRide = (e) => {
   e.target.form.reset();
   console.log("send");
 };
+
+navigateList.forEach(({dataId, label, anchorSection}) => {
+  const itemElement = createNavigateItemElement(dataId, label, anchorSection);
+  navigateListElement.append(itemElement);
+});
+
+const linkList = document.querySelectorAll('[data-id="linkToSection"]');
 
 toGoRideBtn.addEventListener("click", (e) => sendFormToFoRide(e));
 
@@ -290,7 +312,7 @@ function changeContentModalCertificate(element, ind) {
   listFeature.classList.add("hidden");
   imageElement.setAttribute("src", certificate.image);
   titleElement.textContent = certificate.title;
-  priceElement.textContent = certificate.priceStart + " " + certificate.priceFull;
+  priceElement.textContent = `от ${changeNumberFormat(certificate.priceStart)} до ${changeNumberFormat(certificate.priceFull)}`;
   descriptionElement.textContent = certificate.description;
   if (certificate.feature.length > 0) {
     listFeature.classList.replace("hidden", "block");

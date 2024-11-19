@@ -1,3 +1,41 @@
+export const navigateList = [
+  {
+    dataId: "linkToSection",
+    label: "Главная",
+    anchorSection: "#home",
+  },
+  {
+    dataId: "linkToSection",
+    label: "О нас",
+    anchorSection: "#about",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Мы предлагаем",
+    anchorSection: "#weAreOffering",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Техника",
+    anchorSection: "#moto",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Маршруты",
+    anchorSection: "#road",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Контакты",
+    anchorSection: "#contacts",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Подарочные сертификаты",
+    anchorSection: "#sertificate",
+  },
+];
+
 export const moto = [
   {
     id: "1",
@@ -80,8 +118,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "Универсальный",
     image: "./images/sert_bg.png",
-    priceStart: "от 1 500 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 1500,
+    priceFull: 15000,
     time: "1 час",
     description:
       "Не знаете, какой сертификат выбрать? Почему бы не дать обладателю сертификата возможность выбрать самому? Теперь у вас есть отличный вариант - подарочный сертификат на сумму! Покупая сертификат в Мотору вы можете быть уверенными, что вы сделали самый лучший и незабываемый подарок!",
@@ -100,8 +138,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "Индивидуальная тренировка на мотоцикле",
     image: "./images/sert_bg.png",
-    priceStart: "от 5 000 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 5000,
+    priceFull: 15000,
     time: "1 час",
     feature: [],
     description:
@@ -113,8 +151,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "Индивидуальная тренировка на питбайке",
     image: "./images/sert_bg.png",
-    priceStart: "от 5 000 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 5000,
+    priceFull: 15000,
     time: "1 час",
     feature: [],
     description:
@@ -126,8 +164,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "На сноубайке",
     image: "./images/sert_bg.png",
-    priceStart: "от 4 500 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 4500,
+    priceFull: 15000,
     time: "1 час",
     feature: [],
     description:
@@ -139,8 +177,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "На снегоходе",
     image: "./images/sert_bg.png",
-    priceStart: "от 4 500 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 4500,
+    priceFull: 15000,
     time: "1 час",
     feature: [],
     description:
@@ -152,8 +190,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "На мотоцикл",
     image: "./images/sert_bg.png",
-    priceStart: "от 4 500 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 4500,
+    priceFull: 15000,
     time: "1 час",
     feature: [],
     description:
@@ -165,8 +203,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "На питбайк",
     image: "./images/sert_bg.png",
-    priceStart: "от 3 500 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 3500,
+    priceFull: 15000,
     time: "1 час",
     feature: [
       "- краткий инструктаж;",
@@ -184,8 +222,8 @@ export const giftCertificates = [
     dataId: "certificate-more-button",
     title: "На квадроцикл",
     image: "./images/sert_bg.png",
-    priceStart: "от 4 500 Р",
-    priceFull: "до 15 000 Р",
+    priceStart: 4500,
+    priceFull: 15000,
     time: "1 час",
     feature: [
       "квадроцикл для двоих;",
