@@ -1,4 +1,4 @@
-import { giftCertificates, videos, navigateList } from "../utils/const.js";
+import { giftCertificates, videos, navigateList, faqList } from "../utils/const.js";
 
 const NUMBER_CERTIFICATE_CARDS = 4;
 
@@ -14,12 +14,18 @@ const closeBtnToGoRideModal = document.querySelector("#closeToGoRideModal");
 const toGoRideBtn = document.querySelector("#toGoRideBtn");
 const content = document.querySelector("#content");
 const certificateList = document.querySelector('[data-id="certificateList"]');
-const visibleMoreButton = document.querySelector('[data-id="visible-more-certificate"]');
+const visibleMoreButton = document.querySelector(
+  '[data-id="visible-more-certificate"]'
+);
 const navigateListElement = document.querySelector('[data-id="navigate-list"]');
+const faqListElement = document.querySelector('[data-id="faq-list"]');
 
 function createNavigateItemElement(dataId, label, anchorSection) {
-  const li = createCustomElement("li", ['group']);
-  const link = createCustomElement("a", ['group-active:text-purple-400', 'transition']);
+  const li = createCustomElement("li", ["group"]);
+  const link = createCustomElement("a", [
+    "group-active:text-purple-400",
+    "transition",
+  ]);
 
   li.setAttribute("data-id", dataId);
   link.setAttribute("href", anchorSection);
@@ -47,7 +53,11 @@ function createCustomElement(item, classes) {
 }
 
 function changeNumberFormat(number) {
-  return new Intl.NumberFormat("ru-RU", {style: 'currency',maximumSignificantDigits: 4, currency: "RUB"}).format(number)
+  return new Intl.NumberFormat("ru-RU", {
+    style: "currency",
+    maximumSignificantDigits: 4,
+    currency: "RUB",
+  }).format(number);
 }
 
 function createCertificateElement(
@@ -136,6 +146,31 @@ function createCertificateElement(
   return li;
 }
 
+function createFaqItemElement(title, description) {
+  const container = createCustomElement("div", [
+    "ac",
+    "cursor-pointer",
+    "!border-0",
+    "active:bg-purple-100",
+    "md:hover:bg-purple-100",
+    "transition-all",
+    "duration-500",
+  ]);
+  const h2 = createCustomElement("h2", ["ac-header", "!border-b", "!border-zinc-300"]);
+  const button = createCustomElement("button", ["ac-trigger", "!py-5", "truncate", "!text-2xl", "sm:!text-5xl", "!font-medium"]);
+  const descriptionWrapper = createCustomElement("div", ["ac-panel"]);
+  const descriptionElement = createCustomElement("p", ["ac-text", "px-4", "py-6"]);
+
+  button.setAttribute("type", "button");
+  button.textContent = title;
+  descriptionElement.textContent = description;
+  h2.append(button);
+  descriptionWrapper.append(description);
+  container.append(h2, descriptionWrapper);
+
+  return container;
+}
+
 const closeMenu = () => {
   menu.classList.replace("translate-x-0", "-translate-x-full");
 };
@@ -169,7 +204,7 @@ const sendFormToFoRide = (e) => {
   console.log("send");
 };
 
-navigateList.forEach(({dataId, label, anchorSection}) => {
+navigateList.forEach(({ dataId, label, anchorSection }) => {
   const itemElement = createNavigateItemElement(dataId, label, anchorSection);
   navigateListElement.append(itemElement);
 });
@@ -248,6 +283,11 @@ toTestBtn[0].addEventListener("mouseout", () => {
   initAnimate.play();
 });
 
+faqList.forEach(({title, description}) => {
+  const accardionItem = createFaqItemElement(title, description);
+  faqListElement.append(accardionItem);
+});
+
 new Accordion(".accordion-container", {
   duration: 400,
   showMultiple: false,
@@ -292,27 +332,43 @@ giftCertificates.forEach(
 );
 
 visibleMoreButton.addEventListener("click", () => {
-  const certificateListElement = document.querySelectorAll(`[data-id="${giftCertificates[0].id}"]`);
+  const certificateListElement = document.querySelectorAll(
+    `[data-id="${giftCertificates[0].id}"]`
+  );
   const certificateHiddenElement = Array.from(certificateListElement).slice(4);
-  certificateHiddenElement.forEach(certificateElement => {
+  certificateHiddenElement.forEach((certificateElement) => {
     certificateElement.classList.replace("hidden", "grid");
-  })
+  });
   visibleMoreButton.classList.replace("block", "hidden");
 });
 
 function changeContentModalCertificate(element, ind) {
   const certificate = giftCertificates[ind];
-  const imageElement = element.querySelector('[data-id="image-certificate-modal"]');
-  const titleElement = element.querySelector('[data-id="title-certificate-modal"]');
-  const priceElement = element.querySelector('[data-id="price-certificate-modal"]');
-  const descriptionElement = element.querySelector('[data-id="description-certificate-modal"]');
-  const listFeature = element.querySelector('[data-id="list-certificate-modal"]');
-  const titleFeature = element.querySelector('[data-id="title-list-certificate-modal"]');
+  const imageElement = element.querySelector(
+    '[data-id="image-certificate-modal"]'
+  );
+  const titleElement = element.querySelector(
+    '[data-id="title-certificate-modal"]'
+  );
+  const priceElement = element.querySelector(
+    '[data-id="price-certificate-modal"]'
+  );
+  const descriptionElement = element.querySelector(
+    '[data-id="description-certificate-modal"]'
+  );
+  const listFeature = element.querySelector(
+    '[data-id="list-certificate-modal"]'
+  );
+  const titleFeature = element.querySelector(
+    '[data-id="title-list-certificate-modal"]'
+  );
   titleFeature.classList.add("hidden");
   listFeature.classList.add("hidden");
   imageElement.setAttribute("src", certificate.image);
   titleElement.textContent = certificate.title;
-  priceElement.textContent = `от ${changeNumberFormat(certificate.priceStart)} до ${changeNumberFormat(certificate.priceFull)}`;
+  priceElement.textContent = `от ${changeNumberFormat(
+    certificate.priceStart
+  )} до ${changeNumberFormat(certificate.priceFull)}`;
   descriptionElement.textContent = certificate.description;
   if (certificate.feature.length > 0) {
     listFeature.classList.replace("hidden", "block");
