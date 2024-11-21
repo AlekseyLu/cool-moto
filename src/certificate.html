@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon.png" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script/burger-menu.js" defer type="module"></script>
+    <script src="./script/certificate-page.js" defer type="module"></script>
+    <title>Certificate</title>
+  </head>
+  <body
+    class="mx-auto font-medium text-xl h-screen min-w-80 max-w-[2000px] overflow-x-hidden"
+  >
+    <div
+      class="relative mr-1 bg-certificateHeroImage bg-auto bg-[right_-25rem_top_-20rem] sm:bg-[center_top_-20rem] bg-no-repeat"
+    >
+      <header
+        id="header"
+        class="sticky top-0 z-[51] backdrop-blur bg-zinc-600/50"
+      >
+        <div
+          class="container gap-6 lg:px-20 px-4 py-4 flex items-center justify-between mx-auto text-white transition-all"
+        >
+          <!-- Burger btn -->
+          <button
+            class="group active:scale-110 transition xl:hidden flex flex-col gap-2 items-center md:justify-center p-4 w-16 h-16"
+            id="burgerBtn"
+          >
+            <span
+              class="w-full h-0.5 bg-white group-active:bg-zinc-400 transition"
+            ></span>
+            <span
+              class="w-[calc(100%-0.5rem)] h-0.5 bg-white group-active:bg-zinc-400 transition"
+            ></span>
+            <span
+              class="w-full h-0.5 bg-white group-active:bg-zinc-400 transition"
+            ></span>
+          </button>
+          <a href="/src/"><img src="./images/logo.svg" alt="Logo" /></a>
+          <!-- Desktop menu -->
+          <nav class="xl:block hidden md:col-span-2">
+            <ul
+              data-id="navigate-list"
+              class="flex gap-5 items-center sm:justify-center justify-end"
+            ></ul>
+          </nav>
+          <!-- Mobile menu -->
+          <nav
+            id="menu"
+            class="overflow-y-auto xl:hidden absolute top-0 right-0 left-0 bottom-0 -translate-x-full transition-transform p-10 min-h-screen !z-[9] !bg-black"
+          >
+            <ul class="flex flex-col gap-5 items-start justify-center">
+              <li class="flex justify-end items-center w-full">
+                <button id="burgerCloseBtn" class="relative w-8 h-8 group">
+                  <span
+                    class="absolute h-1 w-full bg-white rotate-45 group-active:bg-purple-600 transition"
+                  ></span>
+                  <span
+                    class="absolute h-1 w-full bg-white -rotate-45 group-active:bg-purple-600 transition"
+                  ></span>
+                </button>
+              </li>
+              <div
+                data-id="navigate-list"
+                class="flex flex-col gap-5 items-start justify-center"
+              ></div>
+              <li class="group min-w-36" data-id="linkToSection">
+                <a
+                  href="tel:+79956243602"
+                  class="group-active:text-purple-400 transition text-white"
+                  >+7 (999) 999-99-99</a
+                >
+              </li>
+              <li class="group text-white" data-id="linkToSection">
+                <a href="https://t.me/aleksey_lu" target="_blank"
+                  ><img
+                    class="group-active:scale-110 transition-all min-w-8"
+                    width="32px"
+                    src="./images/telegram.png"
+                    alt="Социальная сеть 'Telegram'"
+                /></a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="md:flex items-center flex-nowrap justify-end gap-5 hidden">
+            <li class="group">
+              <a href="https://t.me/aleksey_lu" target="_blank"
+                ><img
+                  class="group-hover:scale-110 transition-all min-w-8"
+                  width="32px"
+                  src="./images/telegram.png"
+                  alt="Социальная сеть 'Telegram'"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main>
+        <!-- hero -->
+        <section class="container mx-auto lg:px-20 px-4">
+          <div class="sm:py-20 py-16">
+            <div
+              class="mb-10 md:mb-0 uppercase text-white font-black max-w-96 xl:max-w-full"
+            >
+              <h1 class="mb-8 text-4xl sm:text-6xl xl:text-7xl text-shadow">
+                Подарочный сертификат
+              </h1>
+              <p class="text-2xl text-shadow">
+                Ощущение адреналина и настоящего приключения
+              </p>
+            </div>
+            <img
+              src="./images/ticket.png"
+              alt="cert"
+              class="ml-auto w-72 object-contain shadow-xl shadow-black rounded-3xl overflow-hidden"
+            />
+          </div>
+        </section>
+        <!-- certificates -->
+        <section class="mx-auto bg-zinc-200" id="certificates">
+          <div class="container mx-auto px-4 lg:px-20 py-20">
+            <h2 class="title-h2 mb-8">Сертификаты</h2>
+            <ul
+              class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-items-center"
+            >
+              <li class="rounded-lg overflow-hidden">
+                <img src="./images/ticket.png" alt="alt" />
+              </li>
+              <li class="rounded-lg overflow-hidden">
+                <img src="./images/ticket.png" alt="alt" />
+              </li>
+              <li class="rounded-lg overflow-hidden">
+                <img src="./images/ticket.png" alt="alt" />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- we are offering -->
+        <section class="container mx-auto py-8 px-4" id="why-us">
+          <div
+            class="py-24 text-white bg-gradient-to-b from-purple-900 to-purple-500 rounded-lg text-center"
+          >
+            <div
+              class="flex flex-col items-center justify-center gap-10 mx-auto px-4 sm:px-2 max-w-2xl"
+            >
+              <h2 class="mb-5 font-bold text-3xl sm:text-5xl max-w-max">
+                Как мы делаем поездки увлекательными?
+              </h2>
+              <p class="font-normal">
+                У нас огромная территория для катаний в лесу и по полям со
+                склонами и подъемами. Катаемся по свободному маршруту, так,
+                чтобы получить максимум эмоций!
+              </p>
+              <button
+                data-id="toTest"
+                class="px-10 py-4 bg-purple-300 rounded-md text-sm text-zinc-600 shadow-lg md:hover:bg-purple-400 md:hover:text-zinc-200 transition active:bg-purple-500 active:text-zinc-200"
+              >
+                Записаться на катание
+              </button>
+            </div>
+          </div>
+          <ul class="sm:py-24 py-10 pb-0" data-id="why-us-certificate"></ul>
+          <div
+            id="toGoRide"
+            class="hidden backdrop-blur z-[100] fixed left-0 top-0 right-0 bottom-0 items-center justify-center bg-zinc-600/40"
+          >
+            <div class="relative p-8 rounded-lg bg-zinc-100">
+              <form
+                class="grid grid-rows-6 justify-items-center gap-4 h-full"
+                id="sendFormToFoRide"
+              >
+                <h2
+                  class="row-span-2 font-black uppercase lg:text-3xl text-xl text-center text-purple-950"
+                >
+                  Заявка на покатушки
+                </h2>
+                <label for="name" class="row-span-1">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Ваше имя"
+                    class="px-4 py-1 rounded-lg focus:outline-none focus:ring"
+                  />
+                </label>
+                <label for="phone" class="row-span-2">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="Ваш телефон"
+                    class="px-4 py-1 rounded-lg focus:outline-none focus:ring"
+                  />
+                </label>
+                <button
+                  id="toGoRideBtn"
+                  class="row-span-1 group px-5 text-white bg-purple-950 md:hover:bg-purple-700 active:bg-purple-600 rounded-md text-center uppercase font-black shadow-lg transition-all"
+                >
+                  Отправить
+                </button>
+              </form>
+              <div
+                class="absolute sm:-top-14 sm:-right-14 -bottom-20 right-2/4 translate-x-2/4 sm:-translate-x-0"
+              >
+                <!-- close btn -->
+                <button
+                  id="closeToGoRideModal"
+                  class="relative flex items-center justify-center w-16 h-16 bg-zinc-200 p-4 rounded-full shadow-md group"
+                >
+                  <span
+                    class="absolute h-0.5 w-8 bg-black rotate-45 group-active:bg-zinc-500"
+                  ></span>
+                  <span
+                    class="absolute h-0.5 w-8 bg-black -rotate-45 group-active:bg-zinc-500"
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- moto -->
+        <section
+          id="moto"
+          class="relative overflow-hidden px-4 py-24 pb-0 sm:pb-6 sm:py-40 text-zinc-200 after:z-50 bg-purple-950 after:absolute after:-top-16 after:-right-2 after:w-[900px] after:h-24 after:bg-white after:rotate-6"
+        >
+          <h2
+            class="mb-10 font-black uppercase lg:text-6xl text-4xl sm:text-5xl text-zinc-200 mx-auto container"
+          >
+            Мотоциклы
+          </h2>
+          <div class="py-10 md:p-4 rounded-xl mx-auto container">
+            <div class="swiper swiper3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
+                    Suzuki Djebel 250 (XC)
+                  </h2>
+                  <div class="grid grid-cols-2 lg:mx-16">
+                    <img
+                      src="./images/moto-1.jpg"
+                      alt="Мотоцикл"
+                      class="self-center justify-self-center mb-4 md:mb-0 sm:mb-8 lg:col-span-1 col-span-2 h-[400px] sm:h-[540px] object-contain"
+                    />
+
+                    <div
+                      class="flex flex-col justify-center lg:col-span-1 col-span-2"
+                    >
+                      <ul class="mb-0 sm:mb-20 md:block grid grid-cols-1">
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип мотоцикла:</span
+                          >
+                          <b>Эндуро</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип двигателя:</span
+                          >
+                          <b class="text-left">
+                            1-цилиндровый, 4-тактный, DOHC</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Рабочий объем:</span
+                          >
+                          <b class="text-left">249 куб. см.</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Максимальная мощьность:</span
+                          >
+                          <b class="text-left"
+                            >30 л.с. (22 кВт) при 8500 об/мин</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Коробка передачь:</span
+                          >
+                          <b class="text-left">6-ти ступенчатая</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Масса мотоцикла:</span
+                          >
+                          <b class="text-left">Стальная</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4">
+                          <span class="justify-self-end text-right">Рама:</span>
+                          <b class="text-left">118 кг</b>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
+                    Suzuki Djebel 250 (XC)
+                  </h2>
+                  <div class="grid grid-cols-2 lg:mx-16">
+                    <img
+                      src="./images/moto-2.jpg"
+                      alt="Мотоцикл"
+                      class="self-center justify-self-center mb-4 md:mb-0 sm:mb-8 lg:col-span-1 col-span-2 h-[400px] sm:h-[540px] object-contain"
+                    />
+
+                    <div
+                      class="flex flex-col justify-center lg:col-span-1 col-span-2"
+                    >
+                      <ul class="mb-0 sm:mb-20 md:block grid grid-cols-1">
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип мотоцикла:</span
+                          >
+                          <b>Эндуро</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип двигателя:</span
+                          >
+                          <b class="text-left">
+                            1-цилиндровый, 4-тактный, DOHC</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Рабочий объем:</span
+                          >
+                          <b class="text-left">249 куб. см.</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Максимальная мощьность:</span
+                          >
+                          <b class="text-left"
+                            >30 л.с. (22 кВт) при 8500 об/мин</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Коробка передачь:</span
+                          >
+                          <b class="text-left">6-ти ступенчатая</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Масса мотоцикла:</span
+                          >
+                          <b class="text-left">Стальная</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4">
+                          <span class="justify-self-end text-right">Рама:</span>
+                          <b class="text-left">118 кг</b>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
+                    Suzuki Djebel 250 (XC)
+                  </h2>
+                  <div class="grid grid-cols-2 lg:mx-16">
+                    <img
+                      src="./images/moto-3.jpg"
+                      alt="Мотоцикл"
+                      class="self-center justify-self-center mb-4 md:mb-0 sm:mb-8 lg:col-span-1 col-span-2 h-[400px] sm:h-[540px] object-contain"
+                    />
+
+                    <div
+                      class="flex flex-col justify-center lg:col-span-1 col-span-2"
+                    >
+                      <ul class="mb-0 sm:mb-20 md:block grid grid-cols-1">
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип мотоцикла:</span
+                          >
+                          <b>Эндуро</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип двигателя:</span
+                          >
+                          <b class="text-left">
+                            1-цилиндровый, 4-тактный, DOHC</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Рабочий объем:</span
+                          >
+                          <b class="text-left">249 куб. см.</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Максимальная мощьность:</span
+                          >
+                          <b class="text-left"
+                            >30 л.с. (22 кВт) при 8500 об/мин</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Коробка передачь:</span
+                          >
+                          <b class="text-left">6-ти ступенчатая</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Масса мотоцикла:</span
+                          >
+                          <b class="text-left">Стальная</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4">
+                          <span class="justify-self-end text-right">Рама:</span>
+                          <b class="text-left">118 кг</b>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="md-4 sm:mb-10 lg:text-6xl text-4xl sm:text-5xl">
+                    Suzuki Djebel 250 (XC)
+                  </h2>
+                  <div class="grid grid-cols-2 lg:mx-16">
+                    <img
+                      src="./images/moto-4.jpg"
+                      alt="Мотоцикл"
+                      class="self-center justify-self-center mb-4 md:mb-0 sm:mb-8 lg:col-span-1 col-span-2 h-[400px] sm:h-[540px] object-contain"
+                    />
+
+                    <div
+                      class="flex flex-col justify-center lg:col-span-1 col-span-2"
+                    >
+                      <ul class="mb-0 sm:mb-20 md:block grid grid-cols-1">
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип мотоцикла:</span
+                          >
+                          <b>Эндуро</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Тип двигателя:</span
+                          >
+                          <b class="text-left">
+                            1-цилиндровый, 4-тактный, DOHC</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Рабочий объем:</span
+                          >
+                          <b class="text-left">249 куб. см.</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Максимальная мощьность:</span
+                          >
+                          <b class="text-left"
+                            >30 л.с. (22 кВт) при 8500 об/мин</b
+                          >
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Коробка передачь:</span
+                          >
+                          <b class="text-left">6-ти ступенчатая</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4 mb-4">
+                          <span class="justify-self-end text-right"
+                            >Масса мотоцикла:</span
+                          >
+                          <b class="text-left">Стальная</b>
+                        </li>
+                        <li class="grid grid-cols-2 gap-4">
+                          <span class="justify-self-end text-right">Рама:</span>
+                          <b class="text-left">118 кг</b>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-button-prev swiper-button-prev3 !pr-1 !w-12 !h-12 after:!text-2xl after:!font-black bg-white/80 !text-purple-950 rounded-full shadow shadow-black"
+              ></div>
+              <div
+                class="swiper-button-next swiper-button-next3 !pl-1 !w-12 !h-12 after:!text-2xl after:!font-black bg-white/80 !text-purple-950 rounded-full shadow shadow-black"
+              ></div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination3"></div>
+        </section>
+      </main>
+      <footer class="bg-purple-900">
+        <div
+          class="container mx-auto lg:px-20 px-4 py-20 flex items-center justify-between"
+        >
+          <a href="/src/"><img src="./images//logo.svg" alt="Logo" /></a>
+          <p class="text-zinc-500">
+            Copyright © МотоКул, 2015. Все права защищены.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

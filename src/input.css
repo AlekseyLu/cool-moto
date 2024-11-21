@@ -40,3 +40,11 @@
 .box {
   -webkit-appearance: none;
 }
+
+.text-shadow {
+  text-shadow: rgba(72, 72, 72, 1) 5px 0 10px;
+}
+
+.title-h2 {
+  @apply font-black uppercase lg:text-6xl sm:text-5xl text-4xl text-purple-950;
+}

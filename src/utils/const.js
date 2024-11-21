@@ -1,8 +1,9 @@
+// Home page
 export const navigateList = [
   {
     dataId: "linkToSection",
     label: "Главная",
-    anchorSection: "#home",
+    anchorSection: "#",
   },
   {
     dataId: "linkToSection",
@@ -11,7 +12,7 @@ export const navigateList = [
   },
   {
     dataId: "linkToSection",
-    label: "Мы предлагаем",
+    label: "Предлагаем",
     anchorSection: "#weAreOffering",
   },
   {
@@ -26,15 +27,68 @@ export const navigateList = [
   },
   {
     dataId: "linkToSection",
+    label: "FAQ",
+    anchorSection: "#faq",
+  },
+  {
+    dataId: "linkToSection",
     label: "Контакты",
     anchorSection: "#contacts",
   },
   {
     dataId: "linkToSection",
-    label: "Подарочные сертификаты",
+    label: "Сертификаты",
     anchorSection: "#sertificate",
   },
 ];
+
+export const NUMBER_CERTIFICATE_CARDS = 4;
+
+// Certificate page
+export const navigateListCertificate = [
+  {
+    dataId: "linkToSection",
+    label: "Главная",
+    anchorSection: "/src/",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Сертификаты",
+    anchorSection: "#certificates",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Почему мы?",
+    anchorSection: "#why-us",
+  },{
+    dataId: "linkToSection",
+    label: "Техника",
+    anchorSection: "#moto",
+  },
+];
+
+export const whyUs = [
+  {
+    dataId: "whyUsCertificates",
+    description:
+      "Прокат мототехники MOTORU предлагает широкий выбор двухколесной и четырехколесной техники для любителей активного отдыха и экстремальных приключений. Мы предлагаем аренду мотоциклов, питбайков, квадроциклов, снегоходов и сноубайков, что позволяет выбрать именно тот вид транспорта, который подходит для вашего увлечения и предпочтений.",
+    image: "./images/why-us-1.png",
+  },
+  {
+    dataId: "whyUsCertificates",
+    description:
+      "Один из главных преимуществ проката MOTORU — это возможность испытать адреналин и свободу движения на мототехнике без необходимости покупки собственного транспорта. Это особенно удобно для тех, кто редко ездит на мотоциклах или других транспортных средствах и не желает вкладывать значительные суммы в покупку и обслуживание.",
+    image: "./images/why-us-2.png",
+  },
+  {
+    dataId: "whyUsCertificates",
+    description:
+      "Опытные сотрудники проката MOTORU готовы предложить консультацию и помощь в выборе, чтобы каждый клиент получил максимальное удовольствие от аренды мототехники.",
+    image: "./images/why-us-3.png",
+  },
+];
+
+// All pages
 
 export const moto = [
   {

@@ -7,12 +7,13 @@ module.exports = {
         hero: "url('./images/hero_bg.png')",
         runLine: "url('./images/running-line.png')",
         about: "url('./images/about-2.jpg')",
-        certificate: "url('./images/certificate.png')",
         whillTicket: "url('./images/road_ticket.png')",
         rideSummer: "url(./images/for-video-summer.png)",
         rideWinter: "url(./images/for-video-winter.png)",
         rideSnowbike: "url(./images/snowmobile.png)",
-        sertificateImage: "url(./images/sert_bg.png)"
+        sertificateImage: "url(./images/sert_bg.png)",
+        certTestImage: "url(./images/ticket.png)",
+        certificateHeroImage: "url(./images/bg-hero-certificate.png)",
 
       },
       backgroundPosition: {

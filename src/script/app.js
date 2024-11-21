@@ -1,10 +1,11 @@
-import { giftCertificates, videos, navigateList, faqList } from "../utils/const.js";
+import {
+  giftCertificates,
+  videos,
+  faqList,
+  NUMBER_CERTIFICATE_CARDS,
+} from "../utils/const.js";
+import { createCustomElement } from "../utils/helper.js";
 
-const NUMBER_CERTIFICATE_CARDS = 4;
-
-const burgerBtn = document.querySelector("#burgerBtn");
-const menu = document.querySelector("#menu");
-const burgerCloseBtn = document.querySelector("#burgerCloseBtn");
 const toTestBtn = document.querySelectorAll('[data-id="toTest"]');
 const playBtnList = document.querySelectorAll('[data-id="videoBtn"]');
 const videoModal = document.querySelector("#videoModal");
@@ -17,22 +18,7 @@ const certificateList = document.querySelector('[data-id="certificateList"]');
 const visibleMoreButton = document.querySelector(
   '[data-id="visible-more-certificate"]'
 );
-const navigateListElement = document.querySelector('[data-id="navigate-list"]');
 const faqListElement = document.querySelector('[data-id="faq-list"]');
-
-function createNavigateItemElement(dataId, label, anchorSection) {
-  const li = createCustomElement("li", ["group"]);
-  const link = createCustomElement("a", [
-    "group-active:text-purple-400",
-    "transition",
-  ]);
-
-  li.setAttribute("data-id", dataId);
-  link.setAttribute("href", anchorSection);
-  link.textContent = label;
-  li.append(link);
-  return li;
-}
 
 function createVideoElement(url) {
   const video = document.createElement("video");
@@ -42,14 +28,6 @@ function createVideoElement(url) {
   video.setAttribute("width", "100%");
   video.setAttribute("type", "video/mp4");
   return video;
-}
-
-function createCustomElement(item, classes) {
-  const element = document.createElement(item);
-  if (classes.length > 0) {
-    element.classList.add(...classes);
-  }
-  return element;
 }
 
 function changeNumberFormat(number) {
@@ -156,10 +134,25 @@ function createFaqItemElement(title, description) {
     "transition-all",
     "duration-500",
   ]);
-  const h2 = createCustomElement("h2", ["ac-header", "!border-b", "!border-zinc-300"]);
-  const button = createCustomElement("button", ["ac-trigger", "!py-5", "truncate", "!text-2xl", "sm:!text-5xl", "!font-medium"]);
+  const h2 = createCustomElement("h2", [
+    "ac-header",
+    "!border-b",
+    "!border-zinc-300",
+  ]);
+  const button = createCustomElement("button", [
+    "ac-trigger",
+    "!py-5",
+    "truncate",
+    "!text-2xl",
+    "sm:!text-5xl",
+    "!font-medium",
+  ]);
   const descriptionWrapper = createCustomElement("div", ["ac-panel"]);
-  const descriptionElement = createCustomElement("p", ["ac-text", "px-4", "py-6"]);
+  const descriptionElement = createCustomElement("p", [
+    "ac-text",
+    "px-4",
+    "py-6",
+  ]);
 
   button.setAttribute("type", "button");
   button.textContent = title;
@@ -170,14 +163,6 @@ function createFaqItemElement(title, description) {
 
   return container;
 }
-
-const closeMenu = () => {
-  menu.classList.replace("translate-x-0", "-translate-x-full");
-};
-
-const openMenu = () => {
-  menu.classList.replace("-translate-x-full", "translate-x-0");
-};
 
 const openVideoModal = (item, ind) => {
   item.classList.replace("hidden", "flex");
@@ -204,18 +189,7 @@ const sendFormToFoRide = (e) => {
   console.log("send");
 };
 
-navigateList.forEach(({ dataId, label, anchorSection }) => {
-  const itemElement = createNavigateItemElement(dataId, label, anchorSection);
-  navigateListElement.append(itemElement);
-});
-
-const linkList = document.querySelectorAll('[data-id="linkToSection"]');
-
 toGoRideBtn.addEventListener("click", (e) => sendFormToFoRide(e));
-
-burgerBtn.addEventListener("click", openMenu);
-
-burgerCloseBtn.addEventListener("click", closeMenu);
 
 toTestBtn.forEach((testBtn) =>
   testBtn.addEventListener("click", () => modalOpen(toGoRide))
@@ -249,17 +223,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-linkList.forEach((link) => {
-  link.addEventListener("click", () => {
-    console.log(link);
-    closeMenu();
-  });
-});
-
-linkList[0].addEventListener("click", () => {
-  window.scrollTo(0, 0);
-});
-
 const btnSpinning = [
   { transform: "translateY(0)" },
   { transform: "translateY(20px)" },
@@ -283,7 +246,7 @@ toTestBtn[0].addEventListener("mouseout", () => {
   initAnimate.play();
 });
 
-faqList.forEach(({title, description}) => {
+faqList.forEach(({ title, description }) => {
   const accardionItem = createFaqItemElement(title, description);
   faqListElement.append(accardionItem);
 });
