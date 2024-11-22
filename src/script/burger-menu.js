@@ -1,11 +1,19 @@
 import { navigateList, navigateListCertificate } from "../utils/const.js";
+
 let currentNavigateForPage;
 const location = window.location.pathname;
-const currentLocation = location.split('/')[2].split('.')[0];
-if (currentLocation !== "") {
+const currentLocation = location.split('/')[1];
+console.log(currentLocation);
+switch (currentLocation) {
+  case "certificate.html":
     currentNavigateForPage = navigateListCertificate;
-} else {
+    break;
+  case "index.html":
     currentNavigateForPage = navigateList;
+    break;
+  default:
+    currentNavigateForPage = navigateList;
+    break;
 }
 
 const burgerBtn = document.querySelector("#burgerBtn");
@@ -27,6 +35,7 @@ function createNavigateItemElement(dataId, label, anchorSection) {
   const li = createCustomElement("li", ["group"]);
   const link = createCustomElement("a", [
     "group-active:text-purple-400",
+    "md:group-hover:text-purple-400",
     "transition",
     "min-w-20",
   ]);

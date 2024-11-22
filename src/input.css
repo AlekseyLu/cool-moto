@@ -48,3 +48,13 @@
 .title-h2 {
   @apply font-black uppercase lg:text-6xl sm:text-5xl text-4xl text-purple-950;
 }
+
+.shadow-img {
+  -webkit-filter: drop-shadow(10px 10px 10px #333) !important;
+  filter: drop-shadow(10px 10px 10px #333) !important;
+}
+
+.shadow-img-logo {
+  -webkit-filter: drop-shadow(0px 0px 15px #fff ) !important;
+  filter: drop-shadow(0px 0px 15px #fff ) !important;
+}

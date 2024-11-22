@@ -7,6 +7,7 @@ module.exports = {
         hero: "url('./images/hero_bg.png')",
         runLine: "url('./images/running-line.png')",
         about: "url('./images/about-2.jpg')",
+        // aboutBig: "url('./images/about-new.jpg')",
         whillTicket: "url('./images/road_ticket.png')",
         rideSummer: "url(./images/for-video-summer.png)",
         rideWinter: "url(./images/for-video-winter.png)",

@@ -4,7 +4,7 @@ import {
   faqList,
   NUMBER_CERTIFICATE_CARDS,
 } from "../utils/const.js";
-import { createCustomElement } from "../utils/helper.js";
+import { changeNumberFormat, createCustomElement } from "../utils/helper.js";
 
 const toTestBtn = document.querySelectorAll('[data-id="toTest"]');
 const playBtnList = document.querySelectorAll('[data-id="videoBtn"]');
@@ -28,14 +28,6 @@ function createVideoElement(url) {
   video.setAttribute("width", "100%");
   video.setAttribute("type", "video/mp4");
   return video;
-}
-
-function changeNumberFormat(number) {
-  return new Intl.NumberFormat("ru-RU", {
-    style: "currency",
-    maximumSignificantDigits: 4,
-    currency: "RUB",
-  }).format(number);
 }
 
 function createCertificateElement(

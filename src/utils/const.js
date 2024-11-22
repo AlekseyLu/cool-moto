@@ -49,7 +49,7 @@ export const navigateListCertificate = [
   {
     dataId: "linkToSection",
     label: "Главная",
-    anchorSection: "/src/",
+    anchorSection: "/index.html",
   },
   {
     dataId: "linkToSection",
@@ -60,10 +60,26 @@ export const navigateListCertificate = [
     dataId: "linkToSection",
     label: "Почему мы?",
     anchorSection: "#why-us",
-  },{
+  },
+  {
     dataId: "linkToSection",
     label: "Техника",
     anchorSection: "#moto",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Маршруты",
+    anchorSection: "#road",
+  },
+  {
+    dataId: "linkToSection",
+    label: "О нас",
+    anchorSection: "#about",
+  },
+  {
+    dataId: "linkToSection",
+    label: "Контакты",
+    anchorSection: "#map",
   },
 ];
 
@@ -85,6 +101,30 @@ export const whyUs = [
     description:
       "Опытные сотрудники проката MOTORU готовы предложить консультацию и помощь в выборе, чтобы каждый клиент получил максимальное удовольствие от аренды мототехники.",
     image: "./images/why-us-3.png",
+  },
+];
+
+export const roads = [
+  {
+    title: "Маршрут 1",
+    price: 1000,
+    description:
+      "Лесные участки чередуются с небольшими оврагами, подъемами и спусками, что делает поездку более разнообразной и увлекательной. Местами дорога становится извилистой, с корнями и камнями под колесами, требующими точности управления.",
+    image: "./images/roads/road-1.jpg",
+  },
+  {
+    title: "Маршрут 2",
+    price: 5000,
+    description:
+      "Природа вокруг меняется: густые заросли, хвойные и лиственные деревья создают плотный зелёный коридор, а мягкий свет солнца пробивается сквозь кроны, создавая таинственную атмосферу. Это идеальное место для тех, кто ищет активного приключения, но в то же время хочет насладиться красотой дикой природы Ленинградской области.",
+    image: "./images/roads/road-2.jpg",
+  },
+  {
+    title: "Маршрут 3",
+    price: 10000,
+    description:
+      "Ветер в лицо, рев двигателя и свобода пространства создают непередаваемое ощущение драйва. Это место идеально подходит для того, чтобы на полную мощь испытать технику и насладиться скоростью на фоне бескрайних полей. Вдали открываются красивые виды на горизонте, и, мчась вперёд, можно полностью погрузиться в дух приключения.",
+    image: "./images/roads/road-3.jpg",
   },
 ];
 
